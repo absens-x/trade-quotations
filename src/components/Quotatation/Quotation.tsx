@@ -49,7 +49,6 @@ const Quotation = () => {
 
     useEffect(() => {
         if (startWS) {
-            // WS.current = new WebSocket('wss://trade.trademux.net:8800/?password=1234');
             WS.current = new WebSocket('ws://localhost:8099');
 
             WS.current.addEventListener('open', () => {
@@ -67,6 +66,7 @@ const Quotation = () => {
             quotations.current = [];
             setQuotationsLength(0);
             setStartStatistics(false);
+            setStatistics(null);
         }
     }, [startWS]);
 

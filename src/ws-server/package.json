@@ -1,0 +1,12 @@
+{
+  "name": "ws-server",
+  "version": "1.0.0",
+  "description": "Testing WebSocket",
+  "main": "index.js",
+  "author": "Yus",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "ws": "^7.4.4"
+  }
+}
