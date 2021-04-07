@@ -1,9 +1,9 @@
 # Server on WebSocket for imitate trade quotations
 
-## Usage
+## Install
 
 ### `yarn install`
 
-## Run server
+## Usage
 
 ### `nodemon index.js`

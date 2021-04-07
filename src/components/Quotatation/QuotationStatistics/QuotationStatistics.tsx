@@ -3,21 +3,21 @@ import { IStatisticsData } from '../types';
 const QuotationStatistics: React.FC<IStatisticsData> = ({ standartDeviation, mean, mode, median, time }) => {
     return (
         <div>
-            <h2>Cтатистика</h2>
+            <h2>Statistics</h2>
             <p>
-                <b>Среднее:</b> {mean}
+                <b>Mean:</b> {mean}
             </p>
             <p>
-                <b>Стандартное отклонение:</b> {standartDeviation}
+                <b>Standart deviation:</b> {standartDeviation}
             </p>
             <p>
-                <b>Мода:</b> {mode}
+                <b>Mode:</b> {mode}
             </p>
             <p>
-                <b>Медиана:</b> {median}
+                <b>Median:</b> {median}
             </p>
             <p>
-                <b>Время расчетов:</b> {time} мс.
+                <b>Estimate speed time:</b> About {time} ms.
             </p>
         </div>
     );

@@ -72,14 +72,14 @@ const Quotation = () => {
 
     return (
         <div>
-            <h1>Котировка</h1>
+            <h1>Trade Quotations</h1>
             <button className="quotation-btn" onClick={() => setStartWS(true)}>
-                Старт
+                Start
             </button>
             <button className="quotation-btn" onClick={() => setStartStatistics(true)}>
-                Статистика
+                Get statistics
             </button>
-            {quotationsLength > 0 ? <p>Данные для статистики загружены, нажмите еще раз.</p> : null}
+            {quotationsLength > 0 ? <p>Data is loaded, click again</p> : null}
             {statistics ? <QuotationStatistics {...statistics} /> : null}
         </div>
     );
