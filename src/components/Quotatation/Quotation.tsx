@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import { getMean, getStandartDeviation, getMode, getMedian } from '../../logic/calc';
 import { IQuotationData, IStatisticsData } from './types';
@@ -36,6 +36,7 @@ const Quotation = () => {
         if (quotationsLength > 0) {
             result = getComputedStatistics(quotations.current);
         }
+
         return result;
     };
 

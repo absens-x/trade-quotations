@@ -20,7 +20,7 @@ webSocketServer.on('connection', ws => {
    setInterval(() => {
      let value = Math.floor(Math.random() * 1000) + 1000
      ws.send(JSON.stringify({id: id++, value: value}))
-   }, 10)
+   }, 0)
    
 });
 
