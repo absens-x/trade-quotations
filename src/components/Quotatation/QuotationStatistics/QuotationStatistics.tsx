@@ -3,7 +3,7 @@ import { IStatisticsData } from '../types';
 const QuotationStatistics: React.FC<IStatisticsData> = ({ standartDeviation, mean, mode, median, time }) => {
     return (
         <div>
-            <h2>Statistics</h2>
+            <h2>Statistics of last 1000 quotations</h2>
             <p>
                 <b>Mean:</b> {mean}
             </p>

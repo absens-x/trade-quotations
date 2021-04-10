@@ -25,7 +25,6 @@ function getComputedStatistics(data: IQuotationData[]): IStatisticsData {
 const Quotation = () => {
     const [startWS, setStartWS] = useState<boolean>(false);
     const [startStatistics, setStartStatistics] = useState<boolean>(false);
-    const [quotationsLength, setQuotationsLength] = useState<number>(0);
     const [statistics, setStatistics] = useState<IStatisticsData | null>();
 
     const quotations = useRef<IQuotationData[]>([]);
@@ -33,16 +32,14 @@ const Quotation = () => {
 
     const statisticsData = () => {
         let result: IStatisticsData | null = null;
-        if (quotationsLength > 0) {
-            result = getComputedStatistics(quotations.current);
+        if (quotations.current.length > 1000) {
+            result = getComputedStatistics(quotations.current.slice(-1000));
         }
-
         return result;
     };
 
     useEffect(() => {
         if (startStatistics) {
-            setQuotationsLength(quotations.current.length);
             setStatistics(statisticsData);
             setStartStatistics(false);
         }
@@ -65,7 +62,6 @@ const Quotation = () => {
             setStartWS(false);
         } else {
             quotations.current = [];
-            setQuotationsLength(0);
             setStartStatistics(false);
             setStatistics(null);
         }
@@ -80,7 +76,7 @@ const Quotation = () => {
             <button className="quotation-btn" onClick={() => setStartStatistics(true)}>
                 Get statistics
             </button>
-            {quotationsLength > 0 ? <p>Data is loaded, click again</p> : null}
+            {quotations.current.length > 0 ? <p>Data loaded, click again</p> : null}
             {statistics ? <QuotationStatistics {...statistics} /> : null}
         </div>
     );
